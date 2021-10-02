@@ -1,5 +1,5 @@
-const date1 = new Date('May 27, 2021');
-const date2 = new Date('June 5, 2021');
+const date1 = new Date('Nov 17, 2019');
+const date2 = new Date('Sep 30, 2021');
 
 const getDays = (date1, date2) => {
     const oneDay = 1000 * 60 * 60 * 24;
