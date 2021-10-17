@@ -1,30 +1,39 @@
-import { useState } from 'react';
-import './App.css';
+import { useState } from "react";
+import "./App.css";
 
 const App = () => {
-  const [name, setName] = useState('');
-  const [age, setAge] = useState('');
-  const [user, setUser] = useState('');
+  const [name, setName] = useState("");
+  const [age, setAge] = useState("");
+  const [user, setUser] = useState([]);
 
-  const handleAddUser = e => {
-    e.preventDefault();
-
-    setUser(() => {
-      {name, age}
-    })
-  }
+  const handleAddUser = () => {
+    setUser([...user, { name, age}]);
+  };
 
   return (
     <div>
-      <form>
-        <input value={name} onChange={e => setName(e.target.value)}/>
-        <input type='number' value={age} onChange={e => setAge(e.target.value)}/>
-        <button onSubmit={handleAddUser}>Add user</button>
-      </form>
-      <label>Name: {name}</label>
-      <label>Age: {age}</label>
+        <input 
+        value={name}
+        onChange={e => setName(e.target.value)} />
+        <input
+          type="number"
+          value={age}
+          onChange={e => setAge(e.target.value)}
+        />
+        <button onClick={handleAddUser}>Add user</button>
+
+      <span>
+        {user.map((item, index) => {
+          return (
+           <label key={index}>
+             <h1>{item.name}</h1>
+             <h1>{item.age}</h1>
+           </label> 
+          )
+        })}
+      </span>
     </div>
   );
-}
+};
 
 export default App;
