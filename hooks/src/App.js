@@ -1,23 +1,28 @@
-import logo from './logo.svg';
+import { useState } from 'react';
 import './App.css';
 
-function App() {
+const App = () => {
+  const [name, setName] = useState('');
+  const [age, setAge] = useState('');
+  const [user, setUser] = useState('');
+
+  const handleAddUser = e => {
+    e.preventDefault();
+
+    setUser(() => {
+      {name, age}
+    })
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <form>
+        <input value={name} onChange={e => setName(e.target.value)}/>
+        <input type='number' value={age} onChange={e => setAge(e.target.value)}/>
+        <button onSubmit={handleAddUser}>Add user</button>
+      </form>
+      <label>Name: {name}</label>
+      <label>Age: {age}</label>
     </div>
   );
 }
