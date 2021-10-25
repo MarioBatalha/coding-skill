@@ -1,3 +1,4 @@
+//Paradigma Imperativo
 //Cálculo de factorial usando iteração
 
 var result = 1;
@@ -8,6 +9,7 @@ function factorial(n) {
     return result;
 }
 
+//Paradigma Declarativo
 //Cálculo de factorial usando Recursão
 
  const factorialRecursive = n => {
