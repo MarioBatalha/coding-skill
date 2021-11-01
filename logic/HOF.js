@@ -9,4 +9,4 @@ function meow() {
   console.log("meow meow");
 }
 
-console.log(sing());
+console.log(sing(meow));
