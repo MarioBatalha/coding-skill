@@ -1,4 +1,3 @@
-
 let number = [12,5,4,6,8,9,76];
 
 /*for(let i = 0; i < number.length; i++) {
