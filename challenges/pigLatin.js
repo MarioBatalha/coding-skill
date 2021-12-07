@@ -13,4 +13,4 @@ const translatePigLatin = str => {
     }
 }
 
-console.log(translatePigLatin('pig'))
+console.log(translatePigLatin('algorithm'))
