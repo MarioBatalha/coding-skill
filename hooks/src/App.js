@@ -1,4 +1,6 @@
 import { useState } from "react";
+
+import { StateComponent } from "./components/useState";
 import "./App.css";
 
 const App = () => {
@@ -32,6 +34,7 @@ const App = () => {
           )
         })}
       </span>
+      <StateComponent />
     </div>
   );
 };
