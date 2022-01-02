@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useForm } from "../hook/useForm";
 
 export const StateComponent = () => {
@@ -7,6 +7,18 @@ export const StateComponent = () => {
     password: "",
   });
 
+ /*  useEffect(() => {
+      const onMouseMove = e => {
+          console.log(e);
+      }
+
+      window.addEventListener("mousemove", onMouseMove);
+
+      return () => {
+          window.removeEventListener("mousemove", onMouseMove);
+      }
+  }, [])
+ */
 
   return (
     <div>
