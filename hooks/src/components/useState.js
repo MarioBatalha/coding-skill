@@ -28,6 +28,7 @@ export const StateComponent = () => {
     <div>
       <h1>Use State</h1>
       <input
+        ref={inputRef}
         name="email"
         type="email"
         value={values.email}
@@ -42,6 +43,9 @@ export const StateComponent = () => {
       />
 
       <button>Log in</button>
+      <button onClick={() => {
+          console.log(inputRef.current.focus())
+      }}>Focus</button>
     </div>
   );
 };
