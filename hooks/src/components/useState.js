@@ -1,5 +1,7 @@
-import React, { useEffect } from "react";
+import React, { useRef } from "react";
+
 import { useForm } from "../hook/useForm";
+import { useFetch } from "../hook/useFetch";
 
 export const StateComponent = () => {
   const [values, handleChange] = useForm({
@@ -7,15 +9,17 @@ export const StateComponent = () => {
     password: "",
   });
 
+  const url = "https://randomusers.com";
+  const inputRef = useRef();
+
  /*  useEffect(() => {
       const onMouseMove = e => {
           console.log(e);
       }
-
       window.addEventListener("mousemove", onMouseMove);
 
       return () => {
-          window.removeEventListener("mousemove", onMouseMove);
+        window.removeEventListener("mousemove", onMouseMove);
       }
   }, [])
  */
