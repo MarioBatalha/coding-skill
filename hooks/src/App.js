@@ -1,6 +1,8 @@
 import React from "react";
 
 import { StateComponent } from "./components/useState";
+import { ReducerComponent } from "./hook/useReducer";
+
 import "./App.css";
 
 const App = () => {
@@ -14,6 +16,7 @@ const App = () => {
   return (
     <div>
       <StateComponent />
+      <ReducerComponent />
     </div>
   );
 };
