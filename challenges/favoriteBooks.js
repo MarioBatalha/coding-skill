@@ -1,5 +1,5 @@
 function addFavoriteBook(bookName) {
-    if(!bookName.includes("Great")) {
+    if(!bookName.includes("The")) {
         favoriteBooks.push(bookName);
     }
 }
