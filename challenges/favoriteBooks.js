@@ -1,24 +1,50 @@
-function addFavoriteBook(bookName) {
-    if(!bookName.includes("The")) {
-        favoriteBooks.push(bookName);
+class Bookshelf {
+  constructor() {
+    this.favoriteBooks = [];
+  }
+
+  addFavoriteBook(bookName) {
+    if (!bookName.includes("The")) {
+      this.favoriteBooks.push(bookName);
     }
+  }
+
+  printFavoriteBooks() {
+    console.log(`Favorite Books:  ${String(this.favoriteBooks.length)}`);
+
+    for (let bookName of this.favoriteBooks) {
+      console.log(bookName);
+    }
+  }
 }
 
-function printFavoriteBooks() {
-    console.log(
-        `Favorite Books:  ${favoriteBooks.length}`
-    )
-
-    for(let bookName of favoriteBooks) {
-        console.log(bookName);
-    }
+function addFavoriteBook(bookNames) {
+  if (!bookNames.includes("The")) {
+    favoriteBooks.push(bookNames);
+  }
 }
 
-var favoriteBooks = [];
+function loadBooks(theBookShelf) {
+    fakeAjax(BOOK_API, function onBooks(bookNames) {
+        for(let bookName of bookNames) {
+            theBookShelf.addFavoriteBook(bookName)
+        }
+        theBookShelf.printFavoriteBooks();
+    });
+}
 
-addFavoriteBook("The greatest moment of my career");
-addFavoriteBook("No pain no gain");
-addFavoriteBook("Be kind every time");
-addFavoriteBook("What is your main point");
+var BOOK_API = "https://some.url/api";
 
-printFavoriteBooks();
+var myBooks = new Bookshelf();
+loadBooks(myBooks);
+
+function fakeAjax(url, cb) {
+  setTimeout(function fakeLoadingDelay() {
+    cd([
+      "The greatest moment of my career",
+      "No pain no gain",
+      "Be kind every time",
+      "What is your main point",
+    ]);
+  },500);
+}
