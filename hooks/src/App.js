@@ -1,22 +1,23 @@
-import React from "react";
+import React, {
+   useState,
+   useRef,
+   useEffect
+ } from "react";
 
 import { StateComponent } from "./components/useState";
 import { ReducerComponent } from "./hook/useReducer";
 
 import "./App.css";
 
-const App = () => {
-
-  /* const handleRemoveAll = () => {
-    user.filter((item, id) => {
-      item.id !== id
-    })
-  } */
+const App = ({users}) => {
+  const [selected, setSelected] = useState(null);
 
   return (
     <div>
-      <StateComponent />
-      <ReducerComponent />
+      <ul>
+        <userSummary onSelect={(user) => setSelected(user)} />
+      </ul>
+      
     </div>
   );
 };
