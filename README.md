@@ -1,1 +1,1 @@
-##Coding skill JS
+##Coding skill JS and projects
