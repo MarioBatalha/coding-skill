@@ -6,5 +6,3 @@ const result = [];
 for(const item of a) {
     result.push(process(item))
 }
-
-console.log(result)
