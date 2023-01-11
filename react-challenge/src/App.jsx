@@ -20,7 +20,6 @@ const App = () => {
   return (
     <div className="App">
       <h1>React course -John Smilga</h1>
-      <EventExamples />
         {
           books.map((book) => (
             <Book key={book.id} {...book} />
