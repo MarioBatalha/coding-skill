@@ -1,6 +1,5 @@
 import React from 'react'
 import { Book } from './components/book/index';
-import { EventExamples } from './components/event-examples';
 
 
 const books = [ {
@@ -17,12 +16,16 @@ const books = [ {
 }]
 
 const App = () => {
+  const handleGetBook = id => {
+    const book = books.find(book => book.id === id)
+    console.log(book)
+  }
   return (
     <div className="App">
       <h1>React course -John Smilga</h1>
         {
           books.map((book) => (
-            <Book key={book.id} {...book} />
+            <Book key={book.id} {...book} handleGetBook={handleGetBook} />
           ))
         }
     </div>
