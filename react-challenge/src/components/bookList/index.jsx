@@ -11,8 +11,8 @@ const BookList = () => {
     <div className="book-list">
       <h1>React course -John Smilga</h1>
         {
-          books.map((book) => (
-            <Book key={book.id} {...book} handleGetBook={handleGetBook} />
+          books.map((book, index) => (
+            <Book key={book.id} {...book} number={index} />
           ))
         }
     </div>

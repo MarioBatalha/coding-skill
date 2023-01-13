@@ -13,10 +13,23 @@
     text-align: center;
     padding: 1rem;
     margin: 1rem;
+
+    position: relative;
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 
 .container-card-img {
     width: 200px;
     height: 250px;
+}
+
+.number {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: lightblue;
+    color: white;
+    padding: 1rem;
+    border-top-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
 }
